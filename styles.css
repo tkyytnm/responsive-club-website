@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -8,8 +10,9 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #707070;
+  font-family: 'Work Sans', sans-serif;
 }
 
 a {
@@ -24,6 +27,7 @@ a:hover {
 
 h1 {
   color: #ff8000;
+  padding-right: 5rem;
 }
 
 h2 {
@@ -34,10 +38,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1% 10%;
+  margin: 1% 20%;
 }
 
-nav div {
+nav {
   display: flex;
   justify-content: center;
 }
@@ -48,7 +52,64 @@ nav a {
 }
 
 @media screen and (max-width: 860px) {
+  header {
+    margin: 1%;
+  }
+
+
+
+  #hamburger {
+    width: 4rem;
+    height: 3.8rem;
+    position: fixed;
+    top: 0.5%;
+    right: 1%;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+  }
+
+  #hamburger span {
+    background-color: #ff8000;
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    z-index: 10;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+  }
+
+  .menu-on span:nth-child(1) {
+    transform: rotate(45deg) translate(0.6rem, 1.2rem);
+  }
+  .menu-on span:nth-child(2) {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  .menu-on span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.6rem, -1.2rem);
+  }  
   
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    transition: all 0.5s;
+    position: fixed;
+    height: 20%;
+    top: -30%;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 5%;
+  }
+
+  nav a {
+    display: block;
+  }
 }
 
 .banner {
@@ -59,12 +120,27 @@ nav a {
   padding: 20rem;
 }
 
+.bg {
+  position: absolute;
+  background-color: #FFE1B4;
+  z-index: -5;
+  width: 100%;
+  height: 50%;
+}
+
 main {
-  margin: 5% 10%;
+  margin: 5% 20%;
 }
 
 main p {
   margin: 4% auto;
+  line-height: 2.5rem;
+}
+
+@media screen and (max-width: 860px) {
+  main {
+    margin: 5%;
+  }
 }
 
 .photos {
@@ -83,6 +159,17 @@ main p {
   display: block;
 }
 
+@media screen and (max-width: 600px) {
+  .photos {
+    flex-wrap: wrap;
+  }
+
+  .photos figure {
+    width: 50%;
+    margin: 0;
+  }
+}
+
 .detail span {
   font-weight: bold;
   color: #ff8000;
@@ -97,4 +184,5 @@ footer {
 
 footer p {
   margin: 1% 0;
+  font-size: 1.6rem;
 }
